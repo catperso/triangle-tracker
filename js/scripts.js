@@ -18,6 +18,18 @@ function isScalene(a, b, c) {
   }
 }
 
+function isIsosceles(a, b, c) {
+  if (a===b && a!==c) {
+    return true;
+  } else if (b===c && b!==a) {
+    return true;
+  } else if (c===a && c!==b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
@@ -33,6 +45,8 @@ $(document).ready(function() {
       $("#triangleType").text("That's not a triangle!");
     } else if (isScalene(sideA, sideB, sideC)) {
       $("#triangleType").text("That's a scalene triangle!");
+    } else if (isIsosceles(sideA, sideB, sideC)) {
+      $("#triangleType").text("That's an isoscelese triangle!");
     } else {
       $("#triangleType").text("That's a triangle!");
     }
