@@ -10,6 +10,14 @@ function isTriangle(a, b, c) {
   }
 }
 
+function isScalene(a, b, c) {
+  if (a!==b && b!==c && c!==a) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
@@ -23,6 +31,8 @@ $(document).ready(function() {
       $("#triangleType").text("Please use numbers!");
     } else if (isTriangle(sideA, sideB, sideC)) {
       $("#triangleType").text("That's not a triangle!");
+    } else if (isScalene(sideA, sideB, sideC)) {
+      $("#triangleType").text("That's a scalene triangle!");
     } else {
       $("#triangleType").text("That's a triangle!");
     }
